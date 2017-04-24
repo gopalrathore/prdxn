@@ -1,0 +1,600 @@
+@charset 'utf-8';
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of
+  * content. Table of content is use display the overall tree structure of your
+  * Layout.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following color code and add your own as this is just and
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+  -------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following typography and add your own as this is just and
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+   html,
+   body,
+   div,
+   span,
+   applet,
+   object,
+   iframe,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   blockquote,
+   pre,
+   a,
+   abbr,
+   acronym,
+   address,
+   big,
+   cite,
+   code,
+   del,
+   dfn,
+   em,
+   img,
+   ins,
+   kbd,
+   q,
+   s,
+   samp,
+   small,
+   strike,
+   strong,
+   sub,
+   sup,
+   tt,
+   var,
+   b,
+   u,
+   i,
+   center,
+   dl,
+   dt,
+   dd,
+   ol,
+   ul,
+   li,
+   fieldset,
+   form,
+   label,
+   legend,
+   table,
+   caption,
+   tbody,
+   tfoot,
+   thead,
+   tr,
+   th,
+   td,
+   article,
+   aside,
+   canvas,
+   details,
+   embed,
+   figure,
+   figcaption,
+   footer,
+   header,
+   hgroup,
+   menu,
+   nav,
+   output,
+   ruby,
+   section,
+   summary,
+   time,
+   mark,
+   audio,
+   video {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  /* Force scrollbar */
+  html {
+    overflow-y: scroll;
+  }
+
+  /* Align radios and text inputs with their label */
+
+  input[type='radio'] {
+    vertical-align: text-bottom;
+  }
+
+  /* Hand cursor on clickable input elements */
+  label,
+  input[type='button'],
+  input[type='submit'],
+  button {
+    cursor: pointer;
+  }
+
+  strong {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+
+  sub,
+  sup {
+    vertical-align: baseline;
+    position: relative;
+    font-size: 55%;
+    line-height: 0;
+  }
+
+  sup {
+    top: -.7em;
+  }
+
+  sub {
+    bottom: -.25em;
+  }
+
+/* 1.2. Clear Fix
+========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: ' ';
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+
+ ul {
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  padding-bottom: 205px;
+  background: #3e3e3e;
+}
+
+.wrapper {
+  width: 74%;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #3e3e3e;
+}
+nav,
+nav ul {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+nav {
+  width: 92%;
+  margin-left: 50px;
+  justify-content: space-between;
+}
+
+.small-menu li {
+  margin-left: 15px;
+}
+
+.small-menu li:first-of-type {
+  margin-left: 0;
+}
+.menu {
+  padding: 30px 0;
+  border-bottom: 2px solid #606060;
+  display: flex;
+  align-items: center;
+}
+
+.navigation li {
+  margin-right: 43px;
+}
+
+header .wrapper h2 {
+  width: 60%;
+  margin-top: 160px;
+  color: #fff;
+  font-size: 47px;
+  text-transform: capitalize;
+}
+
+header span {
+  font-style: italic;
+}
+
+header .fa {
+  font-size: 20px;
+}
+
+header .fa:hover {
+  color: #212121;
+}
+
+header span:after {
+  display: block;
+  content: '';
+}
+
+header .wrapper > a {
+  padding: 15px 50px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  margin-top: 43px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+header .wrapper > a:hover {
+  background: #fff;
+  color: #3e3e3e;
+  text-decoration: none;
+}
+
+.row {
+  padding: 65px 68px;
+  color: #3e3e3e;
+  text-align: center;
+}
+
+.row .wrapper h2:first-of-type {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.row .wrapper h2:nth-of-type(2) {
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+.coun:after {
+  display: block;
+  content: '';
+}
+
+.row .wrapper > p {
+  margin-bottom: 38px;
+  font-size: 14px;
+}
+
+.content {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+}
+
+.content ul {
+  width: 67%;
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+}
+
+.content ul li {
+  width: 45%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content ul li:nth-of-type(3n) {
+  margin-bottom: 0;
+}
+
+
+.list-content h2 {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.list-content {
+  width: 74%;
+}
+
+.list-content p {
+  font-size: 10px;
+  line-height: 20px;
+}
+
+.row-2 {
+  display: flex;
+}
+
+.col {
+  width: 33.33%;
+  padding: 130px 0 120px 0;
+  background: #efefef;
+  font-family: sans-serif;
+  text-align: left;
+  text-align: center;
+}
+
+
+.col-2 {
+  background: #212121;
+}
+
+.col-cont {
+  width: 64%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.col-cont h2:nth-of-type(1) {
+  margin-bottom: 10px;
+  color: #3e3e3e;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.col-cont h2:nth-of-type(2) {
+  margin-bottom: 35px;
+  color: #3e3e3e;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.col-cont p {
+  margin-bottom: 30px;
+  color: #3e3e3e;
+  font-size: 10px;
+  line-height: 20px;
+}
+
+.col-2 .col-cont h2,
+.col-2 p {
+  color: #fff;
+}
+
+.col-cont a {
+  padding: 12px 25px;
+  border: 2px solid #3e3e3e;
+  border-radius: 25px;
+  color: #3e3e3e;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.col a:hover {
+  background: #212121;
+  color: #efefef;
+  text-decoration: none;
+}
+
+.col-2 a {
+  border-color: #fff;
+  background: #212121;
+  color: #fff;
+}
+
+.col-2 a:hover {
+  background: #efefef;
+  color: #212121;
+  text-decoration: none;
+}
+
+.show-case li {
+  position: relative;
+  display: flex;
+  text-align: left;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.show-case li:last-of-type {
+  margin-bottom: 0;
+}
+
+.show-case li:nth-of-type(2) {
+  text-align: right;
+}
+
+.show-case li:nth-of-type(2) .line {
+  left: 47%;
+}
+
+.pro-cont {
+  display: flex;
+  width: 49%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.line {
+  position: absolute;
+  border: 3px solid #efefef;
+  width: 17%;
+  top: 7%;
+  left: 35%;
+}
+
+
+
+.concept { width: 75%; }
+
+.concept h2 {
+  padding-bottom: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.concept h2:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  border: 1px solid #000;
+}
+
+.show-case li:nth-of-type(2) .concept h2:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  border: 1px solid #000;
+}
+
+.concept p {
+ margin-bottom: 30px;
+ color: #3e3e3e;
+ font-size: 10px;
+ line-height: 20px;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  background: #efefef;
+  justify-content: space-between;
+}
+
+.grid > img {
+  width: 32%;
+}
+
+.grid-col {
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 63px 83px 63px 0;
+}
+
+.column {
+  width: 49%;
+}
+.column:first-of-type {
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.column:last-of-type {
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+}

@@ -1,0 +1,746 @@
+@charset 'utf-8';
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of 
+  * content. Table of content is use display the overall tree structure of your
+  * Layout. 
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and 
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow. 
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following color code and add your own as this is just and 
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+  -------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following typography and add your own as this is just and 
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+   html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+   blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+   ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+   dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+   tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+   figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+   time, mark, audio, video {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+
+  /* Force scrollbar */
+  html { overflow-y: scroll; }
+
+  /* Align radios and text inputs with their label */
+
+  input[type='radio'] { vertical-align: text-bottom; }
+
+  /* Hand cursor on clickable input elements */
+  label,
+  input[type='button'],
+  input[type='submit'],
+  button {
+    cursor: pointer;
+  }
+
+  strong {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+  }
+
+  em { font-style: italic; }
+
+  img {
+    border: 0;
+    vertical-align: middle;
+  }
+
+  sub,
+  sup {
+    vertical-align: baseline;
+    position: relative;
+    font-size: 55%;
+    line-height: 0;
+  }
+
+  sup { top: -.7em; }
+
+  sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: ' ';
+}
+
+.cf:after { clear: both; }
+
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start 
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+ /*Your styling goes below*/
+ .container { font-family: 'Roboto', sans-serif; }
+
+ ul { list-style-type: none; }
+
+ a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 68%;
+  margin: 0 auto;
+}
+
+.top-head {
+  padding: 17px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.left-menu > li {
+  padding: 0 20px;
+  border-left: 1px solid #d5d5d5;
+}
+
+.left-menu > li .fa {
+  margin-right: 10px;
+  color: #a4977f;
+}
+
+.left-menu a {
+  color: #032f3e;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.left-menu a:hover {
+  color: #a4977f;
+}
+
+.left-menu > li:last-of-type {
+  padding: 0 12px;
+  border-right: 1px solid #d5d5d5;
+}
+
+.social a .fa { color: #052f3f; }
+
+.social a:hover .fa {
+  color: #a4977f;
+}
+
+.social li:last-of-type {
+  border-right: none;
+}
+
+.left-menu a {
+  padding: 10px 0;
+}
+
+.social li {
+  border: none;
+  margin-right: 21px;
+}
+
+.social li:last-of-type {
+  margin-right: 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav { background: #052f3f; }
+
+nav li {
+  padding: 30px 45px;
+  border-left: 1px solid #0d3948;
+}
+
+nav li:last-of-type {
+  border-right: 1px solid #4f574d;
+}
+
+nav a {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #4f574d;
+}
+
+.active a { color: #4f574d; }
+
+.slider-banner {
+  padding: 1px 0 3% 0;
+  position: relative;
+  background: #9e9e9e;
+  text-align: right;
+}
+
+.slider-banner h2 {
+  margin-top: 369px;
+  color: #fff;
+  font-size: 53px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.slider-banner h3 {
+  color: #fff;
+  font-size: 53px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.slider-banner .wrapper > a {
+  padding: 22px 42px;
+  margin-top: 18px;
+  background: #052f3f;
+  color: #fff;
+  font-size: 50px;
+}
+
+.slider-banner .wrapper > a:hover {
+  opacity: .7;
+}
+
+.indicator-dots {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.indicator-dots a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.indicator .ind-top-active a {
+  background: url('../images/diamond-active.png') no-repeat 0 0;
+}
+
+.indicator { margin: 35px 0; }
+
+.indicator li {
+  margin-bottom: 10px;
+}
+
+.indicator li a {
+  width: 18px;
+  height: 18px;
+  background: url('../images/diamond_top.png') no-repeat 0 0;
+}
+
+.indicator li a:hover {
+  background: url('../images/diamond-active.png') no-repeat 0 0;
+}
+
+.scroll {
+  width: 186px;
+  height: 41px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  background: url('../images/scroll-down.png') no-repeat 0 0;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.scroll .fa {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 5px);
+  color: #ab987a;
+  font-size: 16px;/* Approximation due to font substitution */
+  font-weight: 400;
+  transform: translateY(-50%);
+}
+
+.indicator li:last-of-type {
+  margin-bottom: 0;
+}
+.section {
+  padding: 111px 0;
+  text-align: center;
+}
+
+.section .wrapper > h2 {
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  position: relative;
+  color: #032f3e;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.section .wrapper > h2::after {
+  width: 2%;
+  border: 1px solid #ab987a;
+  position: absolute;
+  right: 48%;
+  bottom: 0;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.section .wrapper > p {
+  color: #616161;
+  font-size: 14px;/* Approximation due to font substitution */
+  font-weight: 300;
+  line-height: 26px;
+}
+
+.service-list {
+  margin-top: 108px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.service-list img {
+  border-radius: 50%;
+}
+
+
+.service-list a {
+  width: 65%;
+  padding-bottom: 14px;
+  margin: 0 auto;
+  margin-top: 14px;
+  display: block;
+  position: relative;
+  color: #032f3e;
+  font-size: 18px;/* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 29px;
+  text-transform: uppercase;
+}
+
+.service-list a::after {
+  width: 16%;
+  border: 1px solid #ab987a;
+  position: absolute;
+  right: 34%;
+  bottom: 0;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.service-list a:hover {
+  color: #ab987a;
+}
+
+.lesson {
+  padding: 90px 0;
+  background: #052f3f;
+  color: #fff;
+}
+
+.lesson h2 {
+  margin-bottom: 70px;
+  color: #fff;
+  font-size: 51px;/* Approximation due to font substitution */
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.lesson h2 span {
+  display: block;
+  font-weight: 100;
+}
+
+.lesson li {
+  width: 45%;
+  padding-left: 65px;
+  margin-bottom: 73px;
+  position: relative;
+  background: url(http://placehold.it/44x38) no-repeat left center;
+  color: #fff;
+  font-size: 18px;/* Approximation due to font substitution */
+  font-weight: 700;
+}
+
+.lesson li:last-of-type {
+  margin: 0;
+}
+
+.lesson li::after {
+  width: 0;
+  height: 48px;
+  border: 1px solid #ab987a;
+  margin: 10px 0;
+  display: block;
+  position: absolute;
+  top: calc(50% - 3.5px);
+  left: 4.8%;
+  content: '';
+  transform: translateY(50%);
+}
+
+.project { background: #f8f9fb; }
+
+.lesson li:last-of-type::after {
+  border: none;
+  content: '';
+}
+
+.project-list {
+  padding-bottom: 22px;
+}
+
+.project-list .wrapper {
+  display: flex;
+}
+.pro-img {
+  width: 66%;
+}
+
+.pro-img img {
+  width: 100%;
+  height: auto;
+}
+
+.pro-disc {
+  box-sizing: border-box;
+  width: 33.3%;
+  padding: 45px 0 0 22px;
+  position: relative;
+}
+
+.project-indicator-dot {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  padding: 22px 28px;
+  position: absolute;
+  top: -13%;
+  right: 0;
+  background: #fff;
+  color: #616161;
+  cursor: pointer;
+}
+
+.project-indicator-dot ul {
+  display: flex;
+}
+
+.project-indicator-dot ul li {
+  margin-left: 10px;
+}
+
+.project-indicator-dot ul a {
+  width: 18px;
+  height: 18px;
+  background: url('../images/right-diamond.png') no-repeat 0 0;
+}
+
+.project-indicator-dot .pro-active a {
+  background: url('../images/middle-active.png') no-repeat 0 0;
+}
+
+.project-indicator-dot ul a:hover {
+  background: url('../images/middle-active.png') no-repeat 0 0;
+}
+
+.project-indicator-dot ul li:first-of-type {
+  margin-left: 0;
+}
+
+.project-indicator-dot .fa {
+  color: #d1d1d1;
+  font-size: 20px;
+}
+
+.project-list .fa-angle-left {
+  margin-right: 105px;
+}
+
+.project-list .fa-angle-right {
+  margin-left: 105px;
+}
+
+.folder {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.folder p:first-of-type {
+  padding-left: 26px;
+  background: url(http://placehold.it/17x14) no-repeat left center;
+  color: #ab987a;
+  font-size: 13px;
+}
+
+.folder p:last-of-type {
+  padding-left: 26px;
+  background: url(http://placehold.it/17x14) no-repeat left center;
+  color: #d1d1d1;
+  font-size: 13px;
+}
+
+.pro-disc h2 {
+  padding-bottom: 18px;
+  margin-bottom: 21px;
+  position: relative;
+  color: #032f3e;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23px;
+}
+
+.pro-disc h2::after {
+  width: 10%;
+  border: 1px solid #ab987a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+}
+
+.pro-disc > p {
+  color: #616161;
+  font-size: 12px;/* Approximation due to font substitution */
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.btn {
+  padding: 19px 50px;
+  margin-top: 27px;
+  display: table;
+  background: #032f3e;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: #ab987a;
+}
+
+.pro-disc > p:last-of-type {
+  margin-top: 40px;
+  margin-right: 16px;
+  display: inline-block;
+}
+
+.pro-disc > ul {
+  display: inline-block;
+}
+
+.pro-disc ul a {
+  color: #d1d1d1;
+}
+
+.pro-disc ul a:hover {
+  color: #ab987a;
+}
+
+.pro-disc > ul li {
+  margin-left: 25px;
+  display: inline-block;
+}
+
+.pro-disc > ul li:first-of-type {
+  margin-left: 0;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.music img,
+.middle-col img,
+.lesson-col img {
+  width: 100%;
+  height: 100%;
+}
+
+.music {
+  width: 32.26%;
+}
+.middle-col {
+  width: 23.45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lesson-col {
+  width: 40.61%;
+}
+
+.col {
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.middle-col .col {
+  height: 47%;
+}
+
+.col p {
+  padding-left: 25px;
+  position: absolute;
+  top: 4%;
+  left: 4%;
+  background: url(http://placehold.it/17x14) no-repeat left center;
+  color: #fff;
+  font-size: 14px;
+}
+
+.all-lesson {
+  text-align: right;
+}
+
+.all-lesson .fa {
+  padding: 18px 25px;
+  border: 2px solid #ab987a;
+  margin-top: 45px;
+  color: #ab987a;
+  font-size: 20px;
+  margin-left: 23px;
+}
+
+.all-lesson .fa:hover {
+  background: #ab987a;
+  color: #fff;
+}
+
+.skype {
+  padding: 37px 0;
+  background: #9e9e9e;
+}
+
+.skype .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skype p {
+  margin: 0 0 0 28px;
+  color: #032f3e;
+  font-size: 25px;/* Approximation due to font substitution */
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.skype p span {
+  display: block;
+  font-weight: 100;
+}
+
+.skype .btn {
+  padding: 19px 40px;
+  border: 2px solid transparent;
+  margin-top: 0;
+  margin-left: 17px;
+}
+
+.skype .btn:hover {
+  border: 2px solid #032f3e;
+  background: transparent;
+}
+
+.skype .btn:first-of-type {
+  margin-left: 0;
+}

@@ -1,0 +1,15 @@
+.parent {
+	max-width: 1200px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.row { margin-top: 20px; }
+
+.thumb {
+	padding: 20px;
+	background: #c0c0c0;
+	text-align: center;
+}
+
+.thumb:nth-of-type(odd) { background: #999; }

@@ -1,0 +1,592 @@
+@charset 'utf-8';
+
+/*------------------------------------------------------------------
+[Table of contents]
+* To keep an overview of structure of your code, we make use of table of
+* content. Table of content is use display the overall tree structure of your
+* Layout.
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following table of content and add your own as this is just and
+* example to let you know)
+
+1. CSS Reset Code
+1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+1.2. Clear Fix
+1.3. Font class declaration
+2. Body
+3. Header / .header
+2.1. Navigation / .navbar
+4. Content / .content
+4.1. Left column / .leftcolumn
+4.2. Right column / .rightcolumn
+4.3. Sidebar / .sidebar
+4.3.1. RSS / .rss
+4.3.2. Search / .search
+4.3.3. Boxes / .box
+4.3.4. Sideblog / .sideblog
+4.3.5. Advertisements / .ads
+5. Footer / .footer
+------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Color codes]
+* Mention the color code you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following color code and add your own as this is just and
+* example to let you know)
+
+Header nav: #e5e5df (Cararra)
+Header nav a (hover): #fff (white)
+Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Typography]
+* Mention the Typography you have used in your html document for the respective
+* elements given as follow.
+* (NOTE: Remove this commented code once you start developing the code.
+* Remove the following typography and add your own as this is just and
+* example to let you know)
+
+Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+-------------------------------------------------------------------*/
+
+/* ==========================================================================
+1. CSS Reset Code
+========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+========================================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -.7em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: ' ';
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* 1.3. Font class declaration
+========================================================================== */
+/*
+* Mention the font property (eg: font-family, font-size, font-weight, font-style
+* etc) that have been commonly used in the html document. Make a class of it and
+* apply to the element wherever it is needed. If any single property in changed,
+* then override only that property in the particular class which is used for the
+* element.
+* (NOTE: Remove this commented code once you start
+* developing the code. Remove the following font class and add your own
+* as this is just and example to let you know. If there is only one font family
+* followed throughout the site, then menstion the font property in body. No need
+* of creating an extra class for it) */
+
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+* {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.section {
+  background-color: #600;
+  padding: 65px 0;
+}
+
+header {
+  border-top: 5px solid #76c38f;
+  background: #290000;
+}
+
+header .wrapper {
+  padding: 45px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+}
+
+header a {
+  padding: 15px 20px;
+  color: #fff;
+}
+
+header a:hover {
+  background: #76c38f;
+  border-radius: 10px;
+}
+
+.slider {
+  padding-bottom: 65px;
+  background: #290000;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  margin: auto;
+  position: relative;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  width: auto;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: .6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0,0,0,.8);
+}
+
+.mySlides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mySlides img {
+  border-radius: 50%;
+}
+
+.slide-content {
+  width: 40%;
+  margin-right: 10%;
+  color: #fff;
+}
+
+.slide-content h2 {
+  font-size: 50px;
+}
+
+.slide-content p {
+  padding: 20px 0 15px 0;
+  color: #8b8787;
+}
+
+.slide-content a {
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #76c38f;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+}
+
+.services li {
+  box-sizing: border-box;
+  width: 23.5%;
+  padding: 25px 35px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hover-img {
+  display: none;
+}
+
+.services {
+  padding: 30px 0;
+  color: #000;
+}
+
+.service {
+  color: #8b8787;
+}
+
+.services li h2 {
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.services p {
+  padding-top: 25px;
+}
+
+.services li:hover {
+  color: #fff;
+  background-color: #76c38f;
+}
+
+.services li:hover .hover-img {
+  display: inline-block;
+}
+
+.services li:hover .active-image {
+  display: none;
+}
+
+.services li:hover .service {
+  color: #fff;
+}
+
+.work {
+  border-top: 5px solid #303030;
+  color: #fff;
+  text-align: center;
+}
+
+.work h2 {
+  padding: 15px 15px;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  bottom: 100px;
+  background-color: #303030;
+  font-size: 35px;
+}
+
+.work ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.work li {
+  border: 5px solid #fff;
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.work li p {
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  background-color: #151515;
+}
+
+.work li:hover {
+  border: 5px solid #76c38f;
+}
+.work li:hover p {
+  display: none;
+}
+
+.container footer {
+  padding-bottom: 0;
+  background-color: #303030;
+}
+
+.footer-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+footer a {
+  color: #76c38f;
+}
+
+.footer-link > li {
+  width: 23%;
+}
+
+.footer-link li h3 {
+  padding-bottom: 30px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.footer-link li h4 {
+  padding-bottom: 20px;
+  color: #76c38f;
+  font-size: 18px;
+}
+
+.footer-link li p {
+  color: #8b8787;
+}
+
+footer span {
+  color: #76c38f;
+  font-size: 15px;
+}
+
+p a {
+  color: #484848;
+  font-size: 15px;
+}
+
+.date {
+  padding: 15px 0;
+  font-size: 15px;
+}
+
+.post {
+  line-height: 22px;
+}
+
+.read {
+  margin-top: 35px;
+  color: #76c38f;
+}
+
+.quick-link {
+  list-style-image: url(../images/Path.png);
+  list-style-position: inside;
+}
+
+.quick-link li {
+  padding: 15px 0;
+  border-bottom: 1px solid #484848;
+}
+
+.quick-link li:first-of-type {
+  padding-top: 0;
+}
+
+.tweet {
+  font-size: 16px;
+}
+
+.tweets li {
+  margin-bottom: 35px;
+}
+
+.tweets p {
+  line-height: 22px;
+}
+
+input {
+  padding: 15px 0 15px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #222;
+}
+
+.message {
+  padding-bottom: 70px;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #76c38f;
+  color: #fff;
+}
+
+.bottom {
+  margin-top: 45px;
+  border-top: 2px solid #000;
+}
+
+.bottom .wrapper {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  color: #8b8787;
+}
